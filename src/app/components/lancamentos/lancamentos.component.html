@@ -36,7 +36,7 @@
                   [class.circle-icon-saida]="item.type=='Saída'" >
                   </div>
                 </td>
-                <td > R${{item.value}} </td>
+                <td > R${{item.value.toFixed(2)}} </td>
                 <td class="btns" >
                   <button (click)="delete(id)" type="button" class="btn btn-danger btn-sm" >Deletar</button>
                 </td>

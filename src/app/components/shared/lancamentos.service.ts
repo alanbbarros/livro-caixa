@@ -96,6 +96,7 @@ export class LancamentosService {
   adicionar(lancamento: Lancamentos){
     let lancamentos = this.listarLancamentos();
     lancamento.date = this.dataLancamento();
+    lancamento.value = lancamento.value;
     lancamentos.unshift(lancamento);
     this.calculaSaldo(lancamento);
     this.mudaLancamentos(lancamentos);
