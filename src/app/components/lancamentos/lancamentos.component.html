@@ -1,0 +1,72 @@
+<section class="header" >
+  <app-add-lancamento (notify)="onNotify()" ></app-add-lancamento>
+</section>
+
+<section class="lista table-responsive" >  
+
+    <table *ngIf="!isEmpty" class="table table-striped">
+        <thead class="table-dark cabecalho" >
+          <tr> 
+            <th *ngIf="isReversed" class="col01" scope="col">
+              Data
+              <svg (click)="reordena()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+              </svg>
+            </th>
+            <th *ngIf="!isReversed" class="col01 reversed" scope="col">
+              Data
+              <svg (click)="reordena()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+              </svg>
+            </th>
+            <th class="col02" scope="col">Título</th>
+            <th class="col03" scope="col">Tipo</th>
+            <th class="col03-1" scope="col"></th>
+            <th class="col04" scope="col">Valor</th>
+            <th class="col05" scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of lancamentos; index as id" >
+            <tr>
+                <td> {{item.date}} </td>
+                <td> {{item.title}} </td>
+                <td>{{item.type}}</td>
+                <td>
+                  <div [class.circle-icon-entrada]="item.type=='Entrada'"
+                  [class.circle-icon-saida]="item.type=='Saída'" >
+                  </div>
+                </td>
+                <td > R${{item.value}} </td>
+                <td class="btns" >
+                  <button (click)="delete(id)" type="button" class="btn btn-danger btn-sm" >Deletar</button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="isEmpty" >
+        <table class="table table-striped" >
+          <thead class="table-dark cabecalho" >
+            <tr> 
+              <th *ngIf="isReversed" class="col01" scope="col">
+                <svg (click)="reordena()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                </svg>
+              </th>
+              <th *ngIf="!isReversed" class="col01 reversed" scope="col">
+                <svg (click)="reordena()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                </svg>
+              </th>
+              <th class="col02" scope="col">Título</th>
+              <th class="col03" scope="col">Tipo</th>
+              <th class="col04" scope="col">Valor</th>
+              <th class="col05" scope="col">Ações</th>
+            </tr>
+          </thead>
+
+        </table>
+
+        <div class="empty" >Nenhum lançamento realizado.</div>
+      </div>
+</section>

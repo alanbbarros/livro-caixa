@@ -1,0 +1,87 @@
+.header{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table th:first-child{
+    border-radius:15px 0 0 0;
+}
+  
+table th:last-child{
+border-radius:0 15px 0 0;
+}
+
+td{
+    vertical-align: middle;
+}
+
+td:last-child{
+    text-align: center;
+}
+
+
+td:nth-child(2){
+    word-wrap: break-word;
+    max-width: 40%;
+    overflow-wrap: break-word;
+}
+
+td:nth-child(3),
+td:nth-child(5){
+    text-align: center;
+}
+
+.col01{
+    width: 15%;
+}
+.col02{
+    width: 55%;
+}
+.col03{
+    width: 10%;
+    text-align: center;
+}
+.col03-1{
+    width: 3%;
+}
+.col04{
+    width: 10%;
+    text-align: center;
+}
+.col05{
+    width: 7%;
+    text-align: center;
+    min-width: 100px;
+}
+
+
+svg{
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.reversed svg{
+    transform: rotateX(180deg);
+}
+
+.empty{
+    width: 100%;
+    text-align: center;
+}
+
+.circle-icon-entrada{
+    width: 12px;
+    height: 12px;
+    background-color: rgb(5, 172, 5);
+    border-radius: 50%;
+
+}
+.circle-icon-saida{
+    width: 12px;
+    height: 12px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+}
+
+

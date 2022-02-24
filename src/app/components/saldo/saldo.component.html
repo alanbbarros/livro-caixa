@@ -1,0 +1,9 @@
+<div class="header-container">
+    <div class="text">Livro Caixa</div>
+
+    <div class="info-container" >
+        <div class="saldo" [ngClass]="{'positivo': saldo > 0, 'negativo': saldo < 0}" > R${{saldo.toFixed(2)}} </div>
+        <div *ngIf="lancamentos.length == 1" class="lancamentos" > {{lancamentos.length}} lançamento realizado </div>
+        <div *ngIf="lancamentos.length > 1" class="lancamentos" > {{lancamentos.length}} lançamentos realizados </div>
+    </div>
+</div>

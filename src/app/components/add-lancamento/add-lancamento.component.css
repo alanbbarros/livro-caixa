@@ -1,0 +1,17 @@
+.add-lancamento{
+    margin-bottom: 50px;
+    height: 100%;
+}
+
+.form-entrada{
+    margin-top: 10px;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+.radio{
+    margin-top: 8px;
+}

@@ -1,0 +1,44 @@
+<form (submit)="adicionar($event); notify.emit()" class="add-lancamento" #formLancamento="ngForm">
+  <div class="row form-entrada">
+    <div class="col-auto">
+      <input 
+      type="text" 
+      class="form-control" 
+      name="title"
+      [(ngModel)]="lancamento.title"
+      placeholder="Título do Lançamento" 
+      aria-label="First name">
+    </div>
+
+    <div class="col-auto radio align-middle">
+      <div class="form-check-inline form-check"  >
+        <input class="form-check-input" type="radio" name="Entrada" [(ngModel)]="lancamento.type" value="Entrada" id="Entrada">
+        <label class="form-check-label" for="Entrada">Entrada</label>
+      </div>
+
+      <div class="form-check-inline " >
+        <input class="form-check-input" type="radio" name="Saída" [(ngModel)]="lancamento.type" value="Saída" id="Saída">
+        <label class="form-check-label" for="Saída">Saída</label>
+      </div>
+
+    </div>
+    
+    <div class="col-auto">
+      <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+      <div class="input-group">
+        <div class="input-group-text">R$</div>
+        <input 
+        type="number" 
+        class="form-control" 
+        id="autoSizingInputGroup"
+        [(ngModel)]="lancamento.value"
+        name="value" 
+        placeholder="Valor">
+      </div>
+    </div>
+
+    <div class="col-auto" >
+        <button type="submit" class="btn btn-secondary" >Adicionar Lançamento</button>
+    </div>
+  </div>
+</form>
